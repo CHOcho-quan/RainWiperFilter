@@ -23,9 +23,9 @@ def generateDataFromVideo(path):
         success, frame = video.read()
         if (cnt - 4) % 37 == 0 or (wiperExist > 0):
             wiperExist = (wiperExist + 1) % 21
-            file.write('./data/{0}.jpg  1\n'.format(cnt))
+            file.write('./Dataset/data/{0}.jpg  1\n'.format(cnt))
         else:
-            file.write('./data/{0}.jpg  0\n'.format(cnt))
+            file.write('./Dataset/data/{0}.jpg  0\n'.format(cnt))
 
 class MyDataSet(Dataset):
 
