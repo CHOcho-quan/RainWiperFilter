@@ -10,10 +10,12 @@ if __name__=="__main__":
 
     while success:
         success, frame2 = video.read()
+        tmp = frame2.copy()
         # writer.write(frame2)
         gray = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
-        _, binary = cv2.threshold(gray, 25, 255, cv2.THRESH_BINARY)
-        # writer.write(binary)
+        _, binary = cv2.threshold(gray, 35, 255, cv2.THRESH_BINARY)
+        # cv2.imshow("binary", binary)
+        # cv2.waitKey(0)
 
         frame2[binary==0] = [0, 0, 0]
         # writer.write(frame2)
@@ -33,5 +35,6 @@ if __name__=="__main__":
         # cv2.imshow("frame", frame2)
         # cv2.waitKey(0)
         writer.write(frame2)
+        frame = tmp
         print(cnt)
         cnt+=1
