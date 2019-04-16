@@ -44,11 +44,7 @@ if __name__ == "__main__":
     # load the weights trained on COCO into the model
     weight_reader = WeightReader("./car_detection/KerasYolo3/yolov3.weights")
     weight_reader.load_weights(yolov3)
-    px = None
-    py = None
 
-    errorness1 = 105
-    errorness2 = 5
     while success:
 
         # frame = process_image(frame, line_image)

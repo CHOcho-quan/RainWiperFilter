@@ -34,6 +34,8 @@ if __name__=="__main__":
 
         # cv2.imshow("frame", frame2)
         # cv2.waitKey(0)
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+        frame2 = cv2.morphologyEx(src=frame2, op=cv2.MORPH_CLOSE, kernel=kernel)
         writer.write(frame2)
         frame = tmp
         print(cnt)
